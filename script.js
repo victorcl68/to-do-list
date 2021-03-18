@@ -5,8 +5,14 @@ function createNewItem() {
   const newTask = document.createElement('li');
   const list = document.querySelector('#lista-tarefas');
   newTask.innerHTML = textoTarefa.value;
+  function lineOut() {
+    newTask.style.textDecoration = 'none';
+    newTask.classList.remove('risked');
+  }
   function riskItem() {
     newTask.style.textDecoration = 'line-through';
+    newTask.className += ' risked';
+    newTask.addEventListener('dblclick', lineOut);
   }
   function corFundo() {
     const cont = document.querySelectorAll('.selected');
@@ -19,10 +25,10 @@ function createNewItem() {
       ant.style.backgroundColor = 'white';
       newTask.className = 'selected';
       newTask.style.backgroundColor = 'rgb(128,128,128)';
-      newTask.addEventListener('dblclick', riskItem);
     }
   }
   newTask.addEventListener('click', corFundo);
+  newTask.addEventListener('dblclick', riskItem);
   list.appendChild(newTask);
 }
 
