@@ -50,10 +50,9 @@ const buttonReset = document.querySelector('#apaga-tudo');
 const listaTarefa = document.querySelector('#lista-tarefas');
 buttonReset.addEventListener('click', () => listaTarefa.innerHTML = '');
 
-const buttonFinalizados = document.querySelector('#remover-finalizados');
-
+const buttonFinalizados = document.querySelector('button#remover-finalizados');
 buttonFinalizados.addEventListener('click', () => {
-  const allFinalizados = document.querySelectorAll('.lineThrough');
+  const allFinalizados = document.querySelectorAll('li.lineThrough');
   for (let index = 0; index < allFinalizados.length; index += 1) {
     allFinalizados[index].remove();
   }
