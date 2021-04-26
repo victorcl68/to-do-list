@@ -24,6 +24,7 @@ function createNewItem() {
     if (conta.length === 0) {
       newTask.className += ' completed';
       newTask.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+      newTask.className += ' lineThrough';
       newTask.addEventListener('dblclick', riskItemOrNot);
     } else {
       const anta = document.querySelector('.completed');
@@ -48,3 +49,12 @@ theButton.addEventListener('click', eraseItem);
 const buttonReset = document.querySelector('#apaga-tudo');
 const listaTarefa = document.querySelector('#lista-tarefas');
 buttonReset.addEventListener('click', () => listaTarefa.innerHTML = '');
+
+const buttonFinalizados = document.querySelector('#remover-finalizados');
+
+buttonFinalizados.addEventListener('click', () => {
+  const allFinalizados = document.querySelectorAll('.lineThrough');
+  for (let index = 0; index < allFinalizados.length; index += 1) {
+    allFinalizados[index].remove();
+  }
+});
