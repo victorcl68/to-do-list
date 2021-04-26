@@ -1,11 +1,11 @@
+// Refatorar código
+
 const textoTarefa = document.querySelector('#texto-tarefa');
 
-// eslint-disable-next-line max-lines-per-function
 function createNewItem() {
   const newTask = document.createElement('li');
   const list = document.querySelector('#lista-tarefas');
   newTask.innerHTML = textoTarefa.value;
-  // eslint-disable-next-line max-lines-per-function
   function corFundo() {
     const cont = document.querySelectorAll('.selected');
     if (cont.length === 0) {
@@ -44,3 +44,7 @@ function eraseItem() {
 const theButton = document.querySelector('#criar-tarefa');
 theButton.addEventListener('click', createNewItem);
 theButton.addEventListener('click', eraseItem);
+
+const buttonReset = document.querySelector('#apaga-tudo');
+const listaTarefa = document.querySelector('#lista-tarefas');
+buttonReset.addEventListener('click', () => listaTarefa.innerHTML = '');
