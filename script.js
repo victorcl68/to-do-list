@@ -69,7 +69,9 @@ const buttonCima = document.querySelector('button#mover-cima');
 const listELement = document.querySelector('#lista-tarefas');
 buttonCima.addEventListener('click', () => {
   const selectedItemToUp = document.querySelector('.selected');
-  listELement.insertBefore(selectedItemToUp, selectedItemToUp.previousElementSibling);
+  if (selectedItemToUp.previousElementSibling) {
+    listELement.insertBefore(selectedItemToUp, selectedItemToUp.previousElementSibling);
+  }
 // A função insertBefore foi retirada do seguinte site:
 // https://pt.stackoverflow.com/questions/150305/como-mudar-a-posi%C3%A7%C3%A3o-de-um-elemento-html-com-javascript
 });
@@ -77,9 +79,6 @@ buttonCima.addEventListener('click', () => {
 function insertAfter(newNode, existingNode) {
   if (existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
-  } else {
-    // existingNode.parentNode.insertBefore(existingNode, list.firstElementChild);
-    listELement.insertBefore(newNode, list.firstElementChild);
   }
 // A lógica dentro do if foi tirada do seguinte site:
 // https://www.javascripttutorial.net/javascript-dom/javascript-insertafter/
