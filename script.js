@@ -77,6 +77,10 @@ buttonCima.addEventListener('click', () => {
 function insertAfter(newNode, existingNode) {
   if (existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+  } else {
+    // existingNode.parentNode.insertBefore(existingNode, list.firstElementChild);
+    listELement.insertBefore(newNode, list.firstElementChild);
+
   }
 // A lógica dentro do if foi tirada do seguinte site:
 // https://www.javascripttutorial.net/javascript-dom/javascript-insertafter/
