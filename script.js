@@ -68,9 +68,12 @@ buttonSelecionado.addEventListener('click', () => {
 const buttonCima = document.querySelector('button#mover-cima');
 const listELement = document.querySelector('#lista-tarefas');
 buttonCima.addEventListener('click', () => {
-  const selectedItemToUp = document.querySelector('.selected');
-  if (selectedItemToUp.previousElementSibling) {
-    listELement.insertBefore(selectedItemToUp, selectedItemToUp.previousElementSibling);
+  const allSelected = document.querySelector('.selected');
+  if (allSelected) {
+    const selectedItemToUp = document.querySelector('.selected');
+    if (selectedItemToUp.previousElementSibling) {
+      listELement.insertBefore(selectedItemToUp, selectedItemToUp.previousElementSibling);
+    }
   }
 });
 
@@ -87,8 +90,11 @@ function insertAfter(newNode, existingNode) {
 
 const buttonBaixo = document.querySelector('button#mover-baixo');
 buttonBaixo.addEventListener('click', () => {
-  const selectedItemToDown = document.querySelector('.selected');
-  if (selectedItemToDown.nextElementSibling) {
-    insertAfter(selectedItemToDown, selectedItemToDown.nextElementSibling);
+  const allSelected = document.querySelector('.selected');
+  if (allSelected) {
+    const selectedItemToDown = document.querySelector('.selected');
+    if (selectedItemToDown.nextElementSibling) {
+      insertAfter(selectedItemToDown, selectedItemToDown.nextElementSibling);
+    }
   }
 });
