@@ -72,20 +72,23 @@ buttonCima.addEventListener('click', () => {
   if (selectedItemToUp.previousElementSibling) {
     listELement.insertBefore(selectedItemToUp, selectedItemToUp.previousElementSibling);
   }
-// A função insertBefore foi retirada do seguinte site:
-// https://pt.stackoverflow.com/questions/150305/como-mudar-a-posi%C3%A7%C3%A3o-de-um-elemento-html-com-javascript
 });
 
 function insertAfter(newNode, existingNode) {
   if (existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
   }
-// A lógica dentro do if foi tirada do seguinte site:
-// https://www.javascripttutorial.net/javascript-dom/javascript-insertafter/
+  // A lógica dentro do if foi tirada do seguinte site:
+  // https://www.javascripttutorial.net/javascript-dom/javascript-insertafter/
+
+  // A função insertBefore foi retirada do seguinte site:
+  // https://pt.stackoverflow.com/questions/150305/como-mudar-a-posi%C3%A7%C3%A3o-de-um-elemento-html-com-javascript
 }
 
 const buttonBaixo = document.querySelector('button#mover-baixo');
 buttonBaixo.addEventListener('click', () => {
   const selectedItemToDown = document.querySelector('.selected');
-  insertAfter(selectedItemToDown, selectedItemToDown.nextElementSibling);
+  if (selectedItemToDown.nextElementSibling) {
+    insertAfter(selectedItemToDown, selectedItemToDown.nextElementSibling);
+  }
 });
