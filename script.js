@@ -69,7 +69,7 @@ buttonSelecionado.addEventListener('click', () => {
 
 buttonCima.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
-  if (selected) {
+  if (selected && selected.previousElementSibling) {
     taskList.insertBefore(selected, selected.previousElementSibling);
   }
 });
