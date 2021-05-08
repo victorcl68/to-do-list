@@ -62,12 +62,14 @@ buttonFinalizados.addEventListener('click', () => {
 
 buttonSelecionado.addEventListener('click', () => {
   const selectedItem = document.querySelector('.selected');
-  selectedItem.remove();
+  if (selectedItem) {
+    selectedItem.remove();
+  }
 });
 
 buttonCima.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
-  if (selected.previousElementSibling) {
+  if (selected) {
     taskList.insertBefore(selected, selected.previousElementSibling);
   }
 });
@@ -85,7 +87,7 @@ const insertAfter = (newNode, existingNode) => {
 
 buttonBaixo.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
-  if (selected.nextElementSibling) {
+  if (selected) {
     insertAfter(selected, selected.nextElementSibling);
   }
 });
