@@ -1,4 +1,3 @@
-// Faltou somente salvar tasks no localStorage (Requisito 12)
 const textoTarefa = document.querySelector('#texto-tarefa');
 const newTasksButton = document.querySelector('#criar-tarefa');
 const buttonFinalizados = document.querySelector('#remover-finalizados');
