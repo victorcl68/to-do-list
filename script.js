@@ -45,10 +45,6 @@ function createNewItem() {
 
 newTasksButton.addEventListener('click', createNewItem);
 
-// newTasksButton.addEventListener('click', () => {
-//   textoTarefa.value = '';
-// });
-
 const buttonReset = document.querySelector('#apaga-tudo');
 buttonReset.addEventListener('click', () => {
   taskList.innerHTML = '';
@@ -97,13 +93,20 @@ buttonBaixo.addEventListener('click', () => {
 buttonSaveList.addEventListener('click', () => {
   const allItemsCreated = document.querySelectorAll('.created');
   for (let index = 0; index < allItemsCreated.length; index += 1) {
-    localStorage.setItem(index, allItemsCreated[index].innerHTML);
+    if (allItemsCreated[index].className.includes('completed')) {
+      localStorage.setItem(index, `cd${allItemsCreated[index].innerHTML}`);
+    } else { localStorage.setItem(index, allItemsCreated[index].innerHTML); }
   }
 });
 
 function createNewItemFromLocalStorage(localStorageParam) {
+  let localStorageParamFixed = localStorageParam;
   const newTask = document.createElement('li');
-  newTask.innerHTML = localStorageParam;
+  if (localStorageParam.includes('cd')) {
+    localStorageParamFixed = localStorageParam.slice(2);
+    newTask.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+  }
+  newTask.innerHTML = localStorageParamFixed;
   taskList.appendChild(newTask);
   newTask.className += 'created';
   newTask.addEventListener('click', corFundo);
@@ -113,7 +116,9 @@ function createNewItemFromLocalStorage(localStorageParam) {
 
 function gettingItemOnInit() {
   for (let index = 0; index < localStorage.length; index += 1) {
-    createNewItemFromLocalStorage(localStorage.getItem(index));
+    if (localStorage.getItem(index).includes('cd')) {
+      createNewItemFromLocalStorage(localStorage.getItem(index));
+    } else { createNewItemFromLocalStorage(localStorage.getItem(index)); }
   }
   return null;
 }
