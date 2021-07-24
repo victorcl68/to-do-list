@@ -5,6 +5,7 @@ const buttonFinalizados = document.querySelector('#remover-finalizados');
 const buttonSelecionado = document.querySelector('#remover-selecionado');
 const buttonCima = document.querySelector('#mover-cima');
 const buttonBaixo = document.querySelector('#mover-baixo');
+const buttonSaveList = document.querySelector('#salvar-tarefas');
 const taskList = document.querySelector('#lista-tarefas');
 
 const corFundo = (newTask) => {
@@ -40,17 +41,19 @@ function createNewItem() {
   newTask.className += 'created';
   newTask.addEventListener('click', corFundo);
   newTask.addEventListener('dblclick', riskItemOrNot);
+  textoTarefa.value = '';
 }
 
 newTasksButton.addEventListener('click', createNewItem);
 
-newTasksButton.addEventListener('click', () => {
-  textoTarefa.value = '';
-});
+// newTasksButton.addEventListener('click', () => {
+//   textoTarefa.value = '';
+// });
 
 const buttonReset = document.querySelector('#apaga-tudo');
 buttonReset.addEventListener('click', () => {
   taskList.innerHTML = '';
+  localStorage.clear();
 });
 
 buttonFinalizados.addEventListener('click', () => {
@@ -91,3 +94,28 @@ buttonBaixo.addEventListener('click', () => {
     insertAfter(selected, selected.nextElementSibling);
   }
 });
+
+buttonSaveList.addEventListener('click', () => {
+  const allItemsCreated = document.querySelectorAll('.created')
+  for (let index = 0; index < allItemsCreated.length; index += 1) {
+    localStorage.setItem(index, allItemsCreated[index].innerHTML)
+  }
+});
+
+function createNewItemFromLocalStorage(localStorageParam) {
+  const newTask = document.createElement('li');
+  newTask.innerHTML = localStorageParam;
+  taskList.appendChild(newTask);
+  newTask.className += 'created';
+  newTask.addEventListener('click', corFundo);
+  newTask.addEventListener('dblclick', riskItemOrNot);
+  textoTarefa.value = '';
+}
+
+function gettingItemOnInit(){
+  for (let index = 0; index < localStorage.length; index += 1) {
+    createNewItemFromLocalStorage(localStorage.getItem(index))
+  }
+}
+
+window.onload = gettingItemOnInit();

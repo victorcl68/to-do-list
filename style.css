@@ -41,3 +41,7 @@ button {
 #remover-selecionado , #apaga-tudo {
   background-color: crimson;
 }
+
+#salvar-tarefas {
+  background-color: blueviolet;
+}
