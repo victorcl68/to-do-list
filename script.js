@@ -26,6 +26,7 @@ const riskItemOrNot = (newTask) => {
   const myNewTask = newTask.target;
   if (myNewTask.style.textDecoration === '') {
     myNewTask.className += ' completed';
+    myNewTask.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
   } else {
     myNewTask.classList.remove('completed');
     myNewTask.style.textDecoration = '';
