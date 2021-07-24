@@ -95,9 +95,9 @@ buttonBaixo.addEventListener('click', () => {
 });
 
 buttonSaveList.addEventListener('click', () => {
-  const allItemsCreated = document.querySelectorAll('.created')
+  const allItemsCreated = document.querySelectorAll('.created');
   for (let index = 0; index < allItemsCreated.length; index += 1) {
-    localStorage.setItem(index, allItemsCreated[index].innerHTML)
+    localStorage.setItem(index, allItemsCreated[index].innerHTML);
   }
 });
 
@@ -111,10 +111,11 @@ function createNewItemFromLocalStorage(localStorageParam) {
   textoTarefa.value = '';
 }
 
-function gettingItemOnInit(){
+function gettingItemOnInit() {
   for (let index = 0; index < localStorage.length; index += 1) {
-    createNewItemFromLocalStorage(localStorage.getItem(index))
+    createNewItemFromLocalStorage(localStorage.getItem(index));
   }
+  return null;
 }
 
 window.onload = gettingItemOnInit();
