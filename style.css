@@ -45,3 +45,7 @@ button {
 #salvar-tarefas {
   background-color: blueviolet;
 }
+
+.completed {
+  text-decoration: line-through black;
+}

@@ -26,7 +26,6 @@ const riskItemOrNot = (newTask) => {
   const myNewTask = newTask.target;
   if (myNewTask.style.textDecoration === '') {
     myNewTask.className += ' completed';
-    myNewTask.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
   } else {
     myNewTask.classList.remove('completed');
     myNewTask.style.textDecoration = '';
@@ -104,7 +103,7 @@ function createNewItemFromLocalStorage(localStorageParam) {
   const newTask = document.createElement('li');
   if (localStorageParam.includes('cd')) {
     localStorageParamFixed = localStorageParam.slice(2);
-    newTask.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+    newTask.className = 'completed ';
   }
   newTask.innerHTML = localStorageParamFixed;
   taskList.appendChild(newTask);

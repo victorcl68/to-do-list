@@ -365,7 +365,7 @@ describe('11 - Adicione um botão com id="remover-finalizados" que quando clicad
   });
 });
 
-describe('12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava', () => {
+describe.only('12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava', () => {
   beforeEach(() => {
     cy.viewport(1366, 768);
     cy.visit('./index.html');
