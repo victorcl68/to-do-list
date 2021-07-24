@@ -94,7 +94,7 @@ buttonSaveList.addEventListener('click', () => {
   const allItemsCreated = document.querySelectorAll('.created');
   for (let index = 0; index < allItemsCreated.length; index += 1) {
     if (allItemsCreated[index].className.includes('completed')) {
-      localStorage.setItem(index, `cd${allItemsCreated[index].innerHTML}`);
+      localStorage.setItem(index, `+${allItemsCreated[index].innerHTML}`);
     } else { localStorage.setItem(index, allItemsCreated[index].innerHTML); }
   }
 });
@@ -102,8 +102,8 @@ buttonSaveList.addEventListener('click', () => {
 function createNewItemFromLocalStorage(localStorageParam) {
   let localStorageParamFixed = localStorageParam;
   const newTask = document.createElement('li');
-  if (localStorageParam.includes('cd')) {
-    localStorageParamFixed = localStorageParam.slice(2);
+  if (localStorageParam.includes('+')) {
+    localStorageParamFixed = localStorageParam.slice(1);
     newTask.className = 'completed ';
   }
   newTask.innerHTML = localStorageParamFixed;
@@ -116,7 +116,7 @@ function createNewItemFromLocalStorage(localStorageParam) {
 
 function gettingItemOnInit() {
   for (let index = 0; index < localStorage.length; index += 1) {
-    if (localStorage.getItem(index).includes('cd')) {
+    if (localStorage.getItem(index).includes('+')) {
       createNewItemFromLocalStorage(localStorage.getItem(index));
     } else { createNewItemFromLocalStorage(localStorage.getItem(index)); }
   }
