@@ -2,13 +2,13 @@
 
 ## O que foi desenvolvido
 
-- Uma lista de tarefas usando `HTML`, `CSS` e `JavaScript`.
+Uma lista de tarefas usando `HTML`, `CSS` e `JavaScript`.
 
 ---
 
 ## Como iniciar o projeto
 
-- Para iniciar o projeto só é necessário clicar no link: https://victorcl68.github.io/to-do-list/ .
+Para iniciar o projeto só é necessário clicar no link: https://victorcl68.github.io/to-do-list/ .
 
 ---
 
@@ -43,4 +43,3 @@ e de fácil manutenção!
    - 10 - Há um botão sinalizado com um "X" que, quando clicado, remove o item selecionado.
 
 ---
-
