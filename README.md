@@ -12,14 +12,6 @@ Para iniciar o projeto só é necessário clicar no link: https://victorcl68.git
 
 ---
 
-## Linter
-
-Para garantir a qualidade do código, foi utilizado neste projeto os linters `ESLint` e `StyleLint`.
-Assim o código se manteve alinhado com as boas práticas de desenvolvimento, sendo mais legível
-e de fácil manutenção!
-
----
-
  # Funcionalidades (features):
  
    - 1 - Ao clicar duas vezes em um item ele é para marcado como completo (essa ação pode ser desfeita clicando duas vezes no item novamente).
