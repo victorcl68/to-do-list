@@ -41,3 +41,6 @@ e de fácil manutenção!
    - 9 - Há dois botões, um indicando para cima e outro para baixo, ambos em laranja, que permitam mover o item selecionado para cima ou para baixo na lista de tarefas.
     
    - 10 - Há um botão sinalizado com um "X" que, quando clicado, remove o item selecionado.
+
+---
+
