@@ -8,7 +8,7 @@ Uma lista de tarefas usando `HTML`, `CSS` e `JavaScript`.
 
 ## Como iniciar o projeto
 
-Para iniciar o projeto só é necessário clicar no link: https://victorcl68.github.io/to-do-list/ .
+Para iniciar o projeto só é necessário clicar [nesse link](https://victorcl68.github.io/to-do-list/).
 
 ---
 
